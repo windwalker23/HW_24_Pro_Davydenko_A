@@ -24,15 +24,18 @@ function renderCard(data) {
     const avatar = document.createElement("img");
     const userName = document.createElement("span");
     const follow = document.createElement("p")
+    const repositories = document.createElement("p")
 
     card.classList.add("card");
 
     card.append(avatar);
     card.append(userName);
     card.append(follow);
+    card.append(repositories);
     container.append(card)
 
     avatar.src = data.avatar_url;
     userName.textContent = data.login;
     follow.textContent = `${data.followers} followers · ${data.following} following`
+    repositories.textContent = `Repositories: ${data.public_repos}`
 }
